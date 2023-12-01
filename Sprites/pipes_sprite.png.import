@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddog5m77vmjy2"
-path="res://.godot/imported/Mobile - Flappy Bird - Version 12 Sprites.png-de9e41b3653e4126a36e601bd95fe2a0.ctex"
+uid="uid://dlfnuanlmcv5r"
+path="res://.godot/imported/pipes_sprite.png-b175130e062070cd17ef70da937c69d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mobile - Flappy Bird - Version 12 Sprites.png"
-dest_files=["res://.godot/imported/Mobile - Flappy Bird - Version 12 Sprites.png-de9e41b3653e4126a36e601bd95fe2a0.ctex"]
+source_file="res://Sprites/pipes_sprite.png"
+dest_files=["res://.godot/imported/pipes_sprite.png-b175130e062070cd17ef70da937c69d3.ctex"]
 
 [params]
 

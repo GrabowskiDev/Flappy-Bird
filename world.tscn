@@ -1,3 +1,29 @@
-[gd_scene format=3 uid="uid://bv1skb0054iwv"]
+[gd_scene load_steps=4 format=3 uid="uid://bv1skb0054iwv"]
+
+[ext_resource type="PackedScene" uid="uid://ckukjqr1gdtjy" path="res://player.tscn" id="1_wp555"]
+[ext_resource type="Texture2D" uid="uid://mhyepihxco6r" path="res://Sprites/background_sprite_day.png" id="2_b3lld"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q743b"]
+size = Vector2(850, 189)
 
 [node name="world" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_wp555")]
+position = Vector2(105, 153)
+scale = Vector2(6, 6)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(353, 1194)
+shape = SubResource("RectangleShape2D_q743b")
+
+[node name="BackgroundSpriteDay" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture_repeat = 2
+scale = Vector2(4.98611, 5.00391)
+texture = ExtResource("2_b3lld")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 300, 256)
+region_filter_clip_enabled = true
