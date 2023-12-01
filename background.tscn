@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://3ybqrxklod0k"]
+
+[ext_resource type="Texture2D" uid="uid://mhyepihxco6r" path="res://Sprites/background_sprite_day.png" id="1_4s44k"]
+[ext_resource type="Script" path="res://background.gd" id="1_piibj"]
+[ext_resource type="Texture2D" uid="uid://cedl6euuc6t8k" path="res://Sprites/floor.png" id="2_3ivmk"]
+[ext_resource type="Texture2D" uid="uid://7hn5amjtwngt" path="res://Sprites/floor_color.png" id="3_ciu4c"]
+
+[node name="Background" type="ParallaxBackground"]
+script = ExtResource("1_piibj")
+
+[node name="Background_img" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.05, 1)
+motion_mirroring = Vector2(475, 0)
+
+[node name="BackgroundSpriteDay" type="Sprite2D" parent="Background_img"]
+position = Vector2(124, 220.444)
+scale = Vector2(1.72222, 1.72222)
+texture = ExtResource("1_4s44k")
+
+[node name="BackgroundSpriteDay2" type="Sprite2D" parent="Background_img"]
+position = Vector2(361.6, 220.444)
+scale = Vector2(1.722, 1.722)
+texture = ExtResource("1_4s44k")
+
+[node name="Floor" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(528, 0)
+
+[node name="Floor" type="Sprite2D" parent="Floor"]
+position = Vector2(66, 370)
+scale = Vector2(0.786, 0.786)
+texture = ExtResource("2_3ivmk")
+
+[node name="Floor2" type="Sprite2D" parent="Floor"]
+position = Vector2(198, 370)
+scale = Vector2(0.786, 0.786)
+texture = ExtResource("2_3ivmk")
+
+[node name="Floor3" type="Sprite2D" parent="Floor"]
+position = Vector2(330.024, 370)
+scale = Vector2(0.786, 0.786)
+texture = ExtResource("2_3ivmk")
+
+[node name="Floor4" type="Sprite2D" parent="Floor"]
+position = Vector2(462.024, 370)
+scale = Vector2(0.786, 0.786)
+texture = ExtResource("2_3ivmk")
+
+[node name="FloorColor" type="Sprite2D" parent="Floor"]
+position = Vector2(132, 416.25)
+scale = Vector2(1.57143, 1.1)
+texture = ExtResource("3_ciu4c")
+
+[node name="FloorColor2" type="Sprite2D" parent="Floor"]
+position = Vector2(396, 416.25)
+scale = Vector2(1.57143, 1.1)
+texture = ExtResource("3_ciu4c")
