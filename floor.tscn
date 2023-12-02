@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx4vuyb3ucvqv"]
+
+[ext_resource type="Texture2D" uid="uid://cedl6euuc6t8k" path="res://Sprites/floor.png" id="1_gr6yo"]
+[ext_resource type="Script" path="res://background.gd" id="1_u32av"]
+[ext_resource type="Texture2D" uid="uid://7hn5amjtwngt" path="res://Sprites/floor_color.png" id="2_4lkop"]
+
+[node name="Floor" type="ParallaxBackground"]
+script = ExtResource("1_u32av")
+
+[node name="Floor_img" type="ParallaxLayer" parent="."]
+z_index = -5
+z_as_relative = false
+motion_mirroring = Vector2(528, 0)
+
+[node name="Floor" type="Sprite2D" parent="Floor_img"]
+z_index = -5
+z_as_relative = false
+position = Vector2(66, 370)
+scale = Vector2(0.786, 0.786)
+texture = ExtResource("1_gr6yo")
+
+[node name="Floor2" type="Sprite2D" parent="Floor_img"]
+z_index = -5
+z_as_relative = false
+position = Vector2(198, 370)
+scale = Vector2(0.786, 0.786)
+texture = ExtResource("1_gr6yo")
+
+[node name="Floor3" type="Sprite2D" parent="Floor_img"]
+z_index = -5
+z_as_relative = false
+position = Vector2(330.024, 370)
+scale = Vector2(0.786, 0.786)
+texture = ExtResource("1_gr6yo")
+
+[node name="Floor4" type="Sprite2D" parent="Floor_img"]
+z_index = -5
+z_as_relative = false
+position = Vector2(462.024, 370)
+scale = Vector2(0.786, 0.786)
+texture = ExtResource("1_gr6yo")
+
+[node name="FloorColor" type="Sprite2D" parent="Floor_img"]
+z_index = -5
+z_as_relative = false
+position = Vector2(132, 416.25)
+scale = Vector2(1.57143, 1.1)
+texture = ExtResource("2_4lkop")
+
+[node name="FloorColor2" type="Sprite2D" parent="Floor_img"]
+z_index = -5
+z_as_relative = false
+position = Vector2(396, 416.25)
+scale = Vector2(1.57143, 1.1)
+texture = ExtResource("2_4lkop")

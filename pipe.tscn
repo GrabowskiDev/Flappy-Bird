@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://dksqn003i4fbx"]
+
+[ext_resource type="Texture2D" uid="uid://cglgs05nn7jwy" path="res://Sprites/pipe_sprite.png" id="1_6lyjb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ed7wi"]
+size = Vector2(26, 256)
+
+[sub_resource type="Animation" id="Animation_l063c"]
+resource_name = "Move_left"
+length = 10.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(0, 0), Vector2(-60, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_isa7y"]
+_data = {
+"Move_left": SubResource("Animation_l063c")
+}
+
+[node name="StaticBody2D" type="CharacterBody2D"]
+z_index = -10
+z_as_relative = false
+motion_mode = 1
+slide_on_ceiling = false
+wall_min_slide_angle = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_ed7wi")
+
+[node name="PipeSprite" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(0, 48)
+texture = ExtResource("1_6lyjb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 272)
+shape = SubResource("RectangleShape2D_ed7wi")
+
+[node name="PipeSprite" type="Sprite2D" parent="CollisionShape2D2"]
+position = Vector2(0, -48)
+texture = ExtResource("1_6lyjb")
+flip_v = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Move_left"
+libraries = {
+"": SubResource("AnimationLibrary_isa7y")
+}
