@@ -29,7 +29,7 @@ shape = SubResource("RectangleShape2D_q743b")
 position = Vector2(105, 153)
 scale = Vector2(3.5, 3.5)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("3_pkb6h")]
+[node name="Pipe" parent="." instance=ExtResource("3_pkb6h")]
 z_index = 0
-position = Vector2(800, 16)
+position = Vector2(636, 16)
 scale = Vector2(3.5, 3.5)
