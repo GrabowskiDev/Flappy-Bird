@@ -14,19 +14,26 @@ slide_on_ceiling = false
 wall_min_slide_angle = 0.0
 script = ExtResource("1_o6wq2")
 
-[node name="Pipe_up" type="CollisionShape2D" parent="."]
+[node name="Pipe_up" type="Area2D" parent="."]
+
+[node name="Pipe_up_shape" type="CollisionShape2D" parent="Pipe_up"]
 position = Vector2(0, -40)
 shape = SubResource("RectangleShape2D_ed7wi")
 
-[node name="PipeSprite" type="Sprite2D" parent="Pipe_up"]
+[node name="PipeSprite" type="Sprite2D" parent="Pipe_up/Pipe_up_shape"]
 position = Vector2(0, 48)
 texture = ExtResource("1_6lyjb")
 
-[node name="Pipe_down" type="CollisionShape2D" parent="."]
+[node name="Pipe_down" type="Area2D" parent="."]
+
+[node name="Pipe_down_shape" type="CollisionShape2D" parent="Pipe_down"]
 position = Vector2(0, 272)
 shape = SubResource("RectangleShape2D_ed7wi")
 
-[node name="PipeSprite" type="Sprite2D" parent="Pipe_down"]
+[node name="PipeSprite" type="Sprite2D" parent="Pipe_down/Pipe_down_shape"]
 position = Vector2(0, -48)
 texture = ExtResource("1_6lyjb")
 flip_v = true
+
+[connection signal="body_shape_entered" from="Pipe_up" to="." method="_on_pipe_up_body_shape_entered"]
+[connection signal="body_shape_entered" from="Pipe_down" to="." method="_on_pipe_down_body_shape_entered"]
