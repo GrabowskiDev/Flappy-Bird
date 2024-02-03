@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bv1skb0054iwv"]
+[gd_scene load_steps=7 format=3 uid="uid://bv1skb0054iwv"]
 
+[ext_resource type="Script" path="res://world.gd" id="1_54cg5"]
 [ext_resource type="PackedScene" uid="uid://ckukjqr1gdtjy" path="res://player.tscn" id="1_wp555"]
 [ext_resource type="PackedScene" uid="uid://dksqn003i4fbx" path="res://pipe.tscn" id="3_pkb6h"]
 [ext_resource type="PackedScene" uid="uid://3ybqrxklod0k" path="res://background.tscn" id="3_xsucx"]
 [ext_resource type="PackedScene" uid="uid://dx4vuyb3ucvqv" path="res://floor.tscn" id="4_v5x81"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cg7e"]
-size = Vector2(426, 20)
+size = Vector2(693, 38)
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_54cg5")
 
 [node name="Background" parent="." instance=ExtResource("3_xsucx")]
 scale = Vector2(2.1, 2.1)
@@ -22,7 +24,7 @@ transform = Transform2D(2.1, 0, 0, 2.1, 0, 0)
 [node name="FloorCollision" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloorCollision"]
-position = Vector2(216, 740)
+position = Vector2(349.5, 749)
 shape = SubResource("RectangleShape2D_6cg7e")
 
 [node name="Player" parent="." instance=ExtResource("1_wp555")]
@@ -34,4 +36,4 @@ z_index = 0
 position = Vector2(636, 16)
 scale = Vector2(3.5, 3.5)
 
-[connection signal="body_entered" from="FloorCollision" to="Pipe" method="_on_floor_collision_body_entered"]
+[connection signal="body_entered" from="FloorCollision" to="Player" method="_on_floor_collision_body_entered"]

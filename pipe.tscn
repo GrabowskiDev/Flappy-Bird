@@ -35,5 +35,5 @@ position = Vector2(0, -48)
 texture = ExtResource("1_6lyjb")
 flip_v = true
 
-[connection signal="body_shape_entered" from="Pipe_up" to="." method="_on_pipe_up_body_shape_entered"]
-[connection signal="body_shape_entered" from="Pipe_down" to="." method="_on_pipe_down_body_shape_entered"]
+[connection signal="body_entered" from="Pipe_up" to="." method="_on_pipe_up_body_entered"]
+[connection signal="body_entered" from="Pipe_down" to="." method="_on_pipe_down_body_entered"]

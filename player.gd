@@ -9,6 +9,9 @@ const FALL_ANIM_DELAY = 200
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node("AnimationPlayer")
 
+func death():
+	get_tree().change_scene_to_file("res://main.tscn")
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -16,7 +19,7 @@ func _physics_process(delta):
 			velocity.y += gravity * JUMP_DEACCELERATION * delta
 		else:
 			velocity.y += gravity * delta
-
+	
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_VELOCITY
@@ -28,3 +31,7 @@ func _physics_process(delta):
 		anim.play("Fall")
 
 	move_and_slide() 
+
+
+func _on_floor_collision_body_entered(body):
+	death()
