@@ -10,7 +10,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node("AnimationPlayer")
 
 func death():
+	# Errors because of changing scene to file
 	get_tree().change_scene_to_file("res://main.tscn")
+	#print('yes')
 
 func _physics_process(delta):
 	# Add the gravity.
